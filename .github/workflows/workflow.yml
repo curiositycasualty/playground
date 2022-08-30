@@ -1,0 +1,18 @@
+name: Build & Test
+on: # yamllint disable-line rule:truthy
+  pull_request:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      # ignore top-level markdown files (CHANGELOG.md, README.md, etc.)
+      - '*.md'
+
+jobs:
+  build:
+    name: Build dependencies
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Run the script
+        run: ./script.sh
