@@ -11,8 +11,10 @@ on: # yamllint disable-line rule:truthy
 jobs:
   build:
     name: Build dependencies
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
+      - uses: actions/checkout@v3
+
       - name: Run the script
         run: ./script.sh
