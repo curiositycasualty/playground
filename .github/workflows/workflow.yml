@@ -8,7 +8,7 @@ on:
     paths:
       - '**'
       # ignore top-level markdown files (CHANGELOG.md, README.md, etc.)
-      - 'README.md'
+      - '!README.md'
 
 jobs:
   build:
