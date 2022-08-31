@@ -5,9 +5,9 @@ on:
     types:
       - opened
     branches:
-      - 'main'
-    paths:
-      - '!**/*.md'
+      - main
+    paths-ignore:
+      - '**/*.md'
 
 jobs:
   build:
