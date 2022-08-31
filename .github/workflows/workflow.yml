@@ -1,11 +1,10 @@
 name: Build & Test
 on:
   push:
-    paths-ignore:
+    paths-ignore: &ignore-md
       - '**.md'
   pull_request:
-    paths-ignore:
-      - '**.md'
+    <<: *ignore-md
 
 jobs:
   build:
