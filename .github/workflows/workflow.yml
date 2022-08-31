@@ -1,11 +1,12 @@
 name: Build & Test
 on:
   push:
-    paths-ignore: &ignore-paths
+    paths-ignore:
       # ignore top-level markdown files (CHANGELOG.md, README.md, etc.)
       - '**.md'
   pull_request:
-    paths-ignore: *ignore-paths
+    paths-ignore:
+      - '**.md'
 
 jobs:
   build:
