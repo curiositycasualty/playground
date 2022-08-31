@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - main
-      - '!actions/copyright*'
     paths:
-      - '**'
       # ignore top-level markdown files (CHANGELOG.md, README.md, etc.)
       - '!README.md'
 
