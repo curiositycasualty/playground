@@ -4,6 +4,11 @@ on:
     paths-ignore:
       # ignore top-level markdown files (CHANGELOG.md, README.md, etc.)
       - '**/*.md'
+      
+  pull_request:
+    opened:
+      paths-ignore:
+      - '**/*.md
 
 jobs:
   build:
