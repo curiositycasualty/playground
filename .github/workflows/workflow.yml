@@ -16,6 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - env:
+           THE_SUN_IS_HOT: 'true'
+           IS_SUN_HOT: ${{ env.THE_SUN_IS_HOT == true }}
            MAIN: ${{ github.ref_name == 'main' }}
            DISPATCH: ${{ github.event_name == 'workflow_dispatch' }}
            DISPATCH_MAIN: ${{ github.event_name == 'workflow_dispatch' && github.ref_name == 'main' }}
