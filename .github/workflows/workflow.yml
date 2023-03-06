@@ -24,6 +24,11 @@ jobs:
               'README.md'
             )
           }}' >> $GITHUB_OUTPUT
+      - run: |
+          echo ran
+        if: |
+          always()
+          && false
       - name: Run the script
         run: |
           chmod a+x ./script.sh
