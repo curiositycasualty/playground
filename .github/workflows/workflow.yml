@@ -18,7 +18,11 @@ jobs:
       - id: step
         run: |
           echo 'sum=${{
-            hashFiles('CHANGELOG.md', 'Jenkinsfile', 'README.md')
+            hashFiles(
+              'CHANGELOG.md',
+              'Jenkinsfile',
+              'README.md'
+            )
           }}' >> $GITHUB_OUTPUT
       - name: Run the script
         run: |
