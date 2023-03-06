@@ -22,11 +22,14 @@ jobs:
         run: |
           echo '
             main=${{ env.MAIN }}
-            main=${{ fromJSON(env.MAIN) }}
+            main=${{ env.MAIN == true }}
+            main=${{ env.MAIN == false }}
             dispatch=${{ env.DISPATCH }}
-            dispatch=${{ fromJSON(env.DISPATCH) }}
+            dispatch=${{ env.DISPATCH == true }}
+            dispatch=${{ env.DISPATCH == false }}
             dispatch_main=${{ env.DISPATCH_MAIN }}
-            dispatch_main=${{ fromJSON(env.DISPATCH_MAIN) }}
+            dispatch_main=${{ env.DISPATCH_MAIN == true }}
+            dispatch_main=${{ env.DISPATCH_MAIN == false }}
           '
       - id: step
         run: |
