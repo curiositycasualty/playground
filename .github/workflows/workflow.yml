@@ -18,18 +18,18 @@ jobs:
       - env:
            MAIN: ${{ github.ref_name == 'main' }}
            DISPATCH: ${{ github.event_name == 'workflow_dispatch' }}
-           DISPATCH_MAIN: ${{ env.DISPATCH && env.MAIN }}
+           DISPATCH_MAIN: ${{ github.event_name == 'workflow_dispatch' && github.ref_name == 'main' }}
         run: |
           echo '
             main=${{ env.MAIN }}
-            main=${{ env.MAIN == true }}
-            main=${{ env.MAIN == false }}
+            main=${{ fromJSON(env.MAIN) == true }}
+            main=${{ fromJSON(env.MAIN) == false }}
             dispatch=${{ env.DISPATCH }}
-            dispatch=${{ env.DISPATCH == true }}
-            dispatch=${{ env.DISPATCH == false }}
+            dispatch=${{ fromJSON(env.DISPATCH) == true }}
+            dispatch=${{ fromJSON(env.DISPATCH) == false }}
             dispatch_main=${{ env.DISPATCH_MAIN }}
-            dispatch_main=${{ env.DISPATCH_MAIN == true }}
-            dispatch_main=${{ env.DISPATCH_MAIN == false }}
+            dispatch_main=${{ fromJSON(env.DISPATCH_MAIN) == true }}
+            dispatch_main=${{ fromJSON(env.DISPATCH_MAIN) == false }}
           '
       - id: step
         run: |
