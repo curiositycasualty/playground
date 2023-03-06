@@ -24,6 +24,7 @@ jobs:
             main=${{ env.MAIN }}
             main=${{ fromJSON(env.MAIN) == true }}
             main=${{ fromJSON(env.MAIN) == false }}
+            main=${{ ! env.MAIN }}
             main=${{ ! fromJSON(env.MAIN) }}
           '
       - id: step
