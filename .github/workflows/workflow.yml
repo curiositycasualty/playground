@@ -24,12 +24,7 @@ jobs:
             main=${{ env.MAIN }}
             main=${{ fromJSON(env.MAIN) == true }}
             main=${{ fromJSON(env.MAIN) == false }}
-            dispatch=${{ env.DISPATCH }}
-            dispatch=${{ fromJSON(env.DISPATCH) == true }}
-            dispatch=${{ fromJSON(env.DISPATCH) == false }}
-            dispatch_main=${{ env.DISPATCH_MAIN }}
-            dispatch_main=${{ fromJSON(env.DISPATCH_MAIN) == true }}
-            dispatch_main=${{ fromJSON(env.DISPATCH_MAIN) == false }}
+            main=${{ ! fromJSON(env.MAIN) }}
           '
       - id: step
         run: |
