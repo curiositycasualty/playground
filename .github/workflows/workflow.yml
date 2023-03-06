@@ -21,10 +21,19 @@ jobs:
            DISPATCH_MAIN: ${{ github.event_name == 'workflow_dispatch' && github.ref_name == 'main' }}
         run: |
           echo '
+            env context-only (cast)
             main=${{ env.MAIN }}
+            
+            env context fromJSON comparison to bool true
             main=${{ fromJSON(env.MAIN) == true }}
+            
+            env context fromJSON comparison to bool false
             main=${{ fromJSON(env.MAIN) == false }}
+            
+            env context-only (cast) negated
             main=${{ ! env.MAIN }}
+            
+            env context fromJSON negated
             main=${{ ! fromJSON(env.MAIN) }}
           '
       - id: step
