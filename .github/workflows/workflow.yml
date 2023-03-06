@@ -18,7 +18,7 @@ jobs:
       - env:
            MAIN: ${{ github.ref_name == 'main' }}
            DISPATCH: ${{ github.event_name == 'workflow_dispatch' }}
-           DISPATCH_MAIN: ${{ fromJSON(env.DISPATCH) && fromJSON(env.MAIN) }}
+           DISPATCH_MAIN: ${{ env.DISPATCH && env.MAIN }}
         run: |
           echo '
             main=${{ env.MAIN }}
